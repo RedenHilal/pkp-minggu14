@@ -169,7 +169,7 @@ if (mahasiswa->util != NULL) {
     mahasiswa->util = NULL;
 }
 if (mahasiswa->rata2 != NULL) {
-    free(mahasiswa->util);
+    free(mahasiswa->rata2);
     mahasiswa->rata2 = NULL;
 }
 }
