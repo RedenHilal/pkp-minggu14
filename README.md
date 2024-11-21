@@ -1,3 +1,3 @@
-Mahasiswa program for praktikum konsep pemrograman semester 1 exam
+Mahasiswa program for praktikum konsep pemrograman semester supplementary assignment
 
 'make' to compile
