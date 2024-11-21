@@ -6,7 +6,6 @@
 #include <unistd.h>
 
 int size = 0,maxsize=0,globalmaks[5]={0,0,0,0,0},globalmin[5]={0,0,0,0,0};
-float total=0;
 
 typedef struct{
     char **mahasiswa;
@@ -83,7 +82,7 @@ void tambahData (data* mahasiswa){
 }
 
 void tampilData(data*mahasiswa){
-    extern float total;
+    float total =0;
     int status = system("clear");
     if (status) system("cls");
     printf("=====================================================================================================================\nNo.\tNRP\t\tNama\t\t\tEval-1\tEval-2\tEval-3\tUAS\tRata-rata\tmaks\tmin\thuruf\n");
@@ -98,7 +97,7 @@ void tampilData(data*mahasiswa){
         if(mahasiswa->rata2[globalmin[4]]>rata) globalmin[4] = i;
     }
     printf("\n\nNilai rata-rata seluruh mahasiswa\t: %g\nNilai Mahasiswa tertinggi\t\t: %s dengan nilai %g\nNilai Mahasiswa terendah\t\t: %s dengan nilai %g\nNilai Mahasiswa dengan Eval1 tertinggi\t: %s dengan nilai %d\nNilai Mahasiswa dengan Eval1 terendah\t: %s dengan nilai %d\nNilai Mahasiswa dengan Eval2 tertinggi\t: %s dengan nilai %d\nNilai Mahasiswa dengan Eval2 terendah\t: %s dengan nilai %d\nNilai Mahasiswa dengan Eval3 tertinggi\t: %s dengan nilai %d\nNilai Mahasiswa dengan Eval3 terendah\t: %s dengan nilai %d\nNilai Mahasiswa dengan UAS tertinggi\t: %s dengan nilai %d\nNilai Mahasiswa dengan UAS terendah\t: %s dengan niai %d\n\n",
-    round(total/(size)),
+    round(total/size),
     mahasiswa->mahasiswa[globalmaks[4]],round(mahasiswa->rata2[globalmaks[4]]),
     mahasiswa->mahasiswa[globalmin[4]],round(mahasiswa->rata2[globalmin[4]]),
     mahasiswa->mahasiswa[globalmaks[0]], mahasiswa->nilai[globalmaks[0]*4+0], 
@@ -110,7 +109,7 @@ void tampilData(data*mahasiswa){
     mahasiswa->mahasiswa[globalmaks[3]], mahasiswa->nilai[globalmaks[3]*4+3], 
     mahasiswa->mahasiswa[globalmin[3]], mahasiswa->nilai[globalmin[3]*4+3]);
 
-    printf("\nPress any key to continue\n");
+    printf("\nPress enter to continue\n");
     getchar();
 }
 
